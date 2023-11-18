@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/image"],
   app: {
     head: {
       link: [

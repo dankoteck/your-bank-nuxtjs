@@ -7,8 +7,12 @@ body {
   font-family: "Lexend", sans-serif;
 }
 
-@layer utilities {
-  .bg-blended {
+@layer components {
+  .bg-mockup-transactions-table {
+    background: linear-gradient(215deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 39.72%),
+      url("/images/asfalt-light.webp");
+    background-size: 37px;
+    background-color: #1a1a1a;
     background-blend-mode: normal, screen, normal;
   }
 }

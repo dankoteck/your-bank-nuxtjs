@@ -40,10 +40,6 @@ export default {
           75: "#BFBFBF",
         },
       },
-      backgroundImage: {
-        "example-transaction-box":
-          "linear-gradient(215deg, rgba(26, 26, 26, 0.00) 0%, #1A1A1A 39.72%), url(<path-to-image>), lightgray 0% 0% / 36.94460690021515px 36.94460690021515px repeat, #1A1A1A",
-      },
     },
   },
   plugins: [],

@@ -4,7 +4,7 @@
   >
     <thead>
       <tr>
-        <th class="p-2.5 border-e border-b border-grey-shades-15 text-left">
+        <th class="p-2.5 md:p-[14px] border-e border-b border-grey-shades-15 text-left">
           <div class="flex items-center gap-1.5">
             <img
               src="/icons/indian-flag.svg"
@@ -18,7 +18,7 @@
           </p>
         </th>
 
-        <th class="p-2.5 border-b border-grey-shades-15 text-left">
+        <th class="p-2.5 md:p-[14px] border-b border-grey-shades-15 text-left">
           <div class="flex items-center gap-1.5">
             <img
               src="/icons/american-flag.svg"
@@ -36,10 +36,10 @@
 
     <tbody>
       <tr>
-        <td class="text-white text-xs p-2.5 border-e border-e-grey-shades-15">
+        <td class="text-white text-xs p-2.5 md:p-[14px] border-e border-e-grey-shades-15">
           5,0000
         </td>
-        <td class="text-white text-xs p-2.5">12.00</td>
+        <td class="text-white text-xs p-2.5 md:p-[14px]">12.00</td>
       </tr>
     </tbody>
   </table>

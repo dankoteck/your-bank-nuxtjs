@@ -9,6 +9,9 @@ export default {
     "./error.vue",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         "green-shades": {

@@ -4,12 +4,14 @@
   >
     <thead>
       <tr>
-        <th class="p-2.5 md:p-[14px] border-e border-b border-grey-shades-15 text-left">
+        <th
+          class="p-2.5 md:p-[14px] border-e border-b border-grey-shades-15 text-left"
+        >
           <div class="flex items-center gap-1.5">
-            <img
+            <nuxt-img
               src="/icons/indian-flag.svg"
               alt="Indian Flag"
-              class="w-6 h-6"
+              class="w-7 h-7"
             />
             <p class="text-xs leading-[150%] text-white">INR</p>
           </div>
@@ -20,10 +22,10 @@
 
         <th class="p-2.5 md:p-[14px] border-b border-grey-shades-15 text-left">
           <div class="flex items-center gap-1.5">
-            <img
+            <nuxt-img
               src="/icons/american-flag.svg"
               alt="American Flag"
-              class="w-6 h-6"
+              class="w-7 h-7"
             />
             <p class="text-xs leading-[150%] text-white">USD</p>
           </div>
@@ -36,7 +38,9 @@
 
     <tbody>
       <tr>
-        <td class="text-white text-xs p-2.5 md:p-[14px] border-e border-e-grey-shades-15">
+        <td
+          class="text-white text-xs p-2.5 md:p-[14px] border-e border-e-grey-shades-15"
+        >
           5,0000
         </td>
         <td class="text-white text-xs p-2.5 md:p-[14px]">12.00</td>

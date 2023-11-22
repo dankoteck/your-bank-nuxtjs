@@ -5,6 +5,17 @@ const currencies = [
   { alt: "Bitcoin Currency Icon", src: "/icons/bitcoin-currency.svg" },
   { alt: "Ethereum Currency Icon", src: "/icons/ethereum-currency.svg" },
 ];
+
+useHead({
+  title: "YourBank | Home",
+  meta: [
+    {
+      name: "description",
+      content:
+        "At YourBank, our mission is to provide comprehensive banking solutions that empower individuals and businesses to achieve their financial goals. We are committed to delivering personalized and innovative services that prioritize our customers' needs.",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -15,7 +26,11 @@ const currencies = [
       <div
         class="p-2 pr-4 flex items-center gap-1 rounded-[61px] bg-grey-shades-15 w-fit"
       >
-        <img alt="Verification Icon" src="/icons/verification.svg" />
+        <nuxt-img
+          alt="Verification Icon"
+          src="/icons/verification.svg"
+          class="w-5 h-5"
+        />
         <p class="text-white font-light text-xs leading-6">
           No LLC Required, No Credit Check.
         </p>
@@ -65,7 +80,7 @@ const currencies = [
         <div
           class="rounded-[28px] bg-grey-shades-10 flex items-center gap-1 justify-center p-1.5"
         >
-          <img
+          <nuxt-img
             v-for="currency in currencies"
             :src="currency.src"
             :alt="currency.alt"

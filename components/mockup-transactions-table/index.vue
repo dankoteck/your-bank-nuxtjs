@@ -46,7 +46,7 @@ const getStyle = (index: number): StyleValue => {
               <div
                 class="bg-green-shades-60 rounded-[28px] flex items-center justify-center p-1.5"
               >
-                <img src="/icons/transaction.svg" alt="Transaction Icon" />
+                <nuxt-img src="/icons/transaction.svg" alt="Transaction Icon" class="w-4 h-4" />
               </div>
               <div
                 class="flex flex-col text-white text-[10px] md:text-xs leading-[150%]"

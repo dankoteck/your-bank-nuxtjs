@@ -70,21 +70,15 @@ const benefits = [
         class="flex-1 px-2.5 lg:px-10 py-[30px] lg:py-6 border-b lg:border-b-0 lg:border-r border-grey-shades-15 flex flex-col gap-6 justify-center items-center"
         :class="{
           'pt-0 lg:pt-6 lg:pl-0': index === 0,
-          'pr-0 border-b-0 !border-r-0': index === benefits.length - 1,
+          '!pr-0 border-b-0 !border-r-0': index === benefits.length - 1,
         }"
       >
-        <div
-          class="w-[72px] h-[72px] p-2 relative rounded-full bg-[linear-gradient(180deg,_rgba(202,_255,_51,_0.05)_0%,_rgba(202,_255,_51,_0.00)_100%)]"
-        >
-          <div
-            class="border border-[#CAFF3310] bg-clip-padding flex items-center justify-center rounded-full w-full h-full bg-[linear-gradient(180deg,_rgba(202,_255,_51,_0.10)_-66.22%,_rgba(202,_255,_51,_0.00)_85.46%)]"
-          >
-            <component
-              :is="item.icon"
-              class="w-[28px] h-auto fill-green-shades-60"
-            />
-          </div>
-        </div>
+        <gradient-icon>
+          <component
+            :is="item.icon"
+            class="w-[28px] h-auto fill-green-shades-60"
+          />
+        </gradient-icon>
 
         <div class="flex flex-col gap-4 items-center text-center">
           <p class="text-white text-xl">{{ item.title }}</p>

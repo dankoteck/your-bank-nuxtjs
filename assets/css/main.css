@@ -15,4 +15,36 @@ body {
     background-color: #1a1a1a;
     background-blend-mode: normal, screen, normal;
   }
+
+  .bg-gradient-icon-container {
+    background-image: linear-gradient(
+      180deg,
+      rgba(202, 255, 51, 0.05) 0%,
+      rgba(202, 255, 51, 0) 100%
+    );
+  }
+
+  .bg-gradient-icon {
+    background-image: linear-gradient(
+      180deg,
+      rgba(202, 255, 51, 0.1) -66.22%,
+      rgba(202, 255, 51, 0) 85.46%
+    );
+  }
+
+  .bg-use-cases {
+    position: relative;
+  }
+
+  .bg-use-cases * {
+    z-index: 1;
+  }
+
+  .bg-use-cases::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/abstract-design-03.svg");
+    background-repeat: no-repeat;
+  }
 }

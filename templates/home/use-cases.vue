@@ -100,7 +100,10 @@ const cases02 = [
           <gradient-icon>
             <nuxt-img
               :src="item.img"
+              :alt="item.title + ' Icon'"
               v-if="typeof item.img === 'string'"
+              width="24"
+              height="24"
               class="w-[24px] h-auto fill-green-shades-60"
             />
             <component
@@ -175,6 +178,9 @@ const cases02 = [
           <gradient-icon>
             <nuxt-img
               :src="item.img"
+              :alt="item.title + ' Icon'"
+              width="24"
+              height="24"
               v-if="typeof item.img === 'string'"
               class="w-[24px] h-auto fill-green-shades-60"
             />

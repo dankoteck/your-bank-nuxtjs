@@ -8,7 +8,7 @@ import NavigationList from "./navigation-list.vue";
   >
     <nuxt-img
       width="120"
-      height="auto"
+      height="40"
       v-bind="$attrs"
       alt="Logo"
       src="/icons/logo-desktop.svg"

@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  BriefcaseIcon,
-  ArchiveBoxArrowDownIcon,
-  BanknotesIcon,
-} from "@heroicons/vue/24/solid";
+import { BriefcaseIcon, ArchiveBoxArrowDownIcon, BanknotesIcon } from "@heroicons/vue/24/solid";
 
 const benefits = [
   {
@@ -32,36 +28,11 @@ const benefits = [
     <div
       class="flex flex-col md:items-end justify-between container gap-6 md:flex-row items-center mt-[70px] md:mt-[120px]"
     >
-      <div class="flex flex-col gap-2.5 text-center md:text-left">
-        <p class="text-[28px] md:text-[38px] leading-[1.5] text-white">
-          <span>Our</span>
-          <span class="text-green-shades-60"> Products</span>
-        </p>
-        <p
-          class="text-grey-shades-70 text-sm md:text-base font-light leading-[1.5]"
-        >
-          Discover a range of comprehensive and customizable banking products at
-          YourBank, designed to suit your
-          <br />
-          unique financial needs and aspirations
-        </p>
-      </div>
-
-      <div
-        class="p-3 flex items-center rounded-[82px] border border-grey-shades-15 bg-grey-shades-11"
-      >
-        <button
-          class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center bg-green-shades-60 text-grey-shades-11"
-        >
-          For Individuals
-        </button>
-
-        <button
-          class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center text-white"
-        >
-          For Businesses
-        </button>
-      </div>
+      <section-title text="Our " textColorful="Products">
+        Discover a range of comprehensive and customizable banking products at YourBank, designed to suit your
+        <br />
+        unique financial needs and aspirations
+      </section-title>
     </div>
 
     <div class="flex flex-col lg:flex-row items-center container">
@@ -74,10 +45,7 @@ const benefits = [
         }"
       >
         <gradient-icon>
-          <component
-            :is="item.icon"
-            class="w-[28px] h-auto fill-green-shades-60"
-          />
+          <component :is="item.icon" class="w-[28px] h-auto fill-green-shades-60" />
         </gradient-icon>
 
         <div class="flex flex-col gap-4 items-center text-center">

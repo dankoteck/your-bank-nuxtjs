@@ -2,6 +2,7 @@
 import HomeHeroSection from "~/templates/home/hero.vue";
 import OurProductsSection from "~/templates/home/our-products.vue";
 import UseCasesSection from "~/templates/home/use-cases.vue";
+import OurFeaturesSection from "~/templates/home/our-features.vue";
 
 useHead({
   title: "YourBank | Home",
@@ -19,4 +20,5 @@ useHead({
   <home-hero-section />
   <our-products-section />
   <use-cases-section />
+  <our-features-section />
 </template>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { BriefcaseIcon, ArchiveBoxArrowDownIcon, BanknotesIcon } from "@heroicons/vue/24/solid";
+import {
+  BriefcaseIcon,
+  ArchiveBoxArrowDownIcon,
+  BanknotesIcon,
+} from "@heroicons/vue/24/solid";
 
 const benefits = [
   {
@@ -24,12 +28,13 @@ const benefits = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-[60px] md:gap-[80px]">
+  <section class="flex flex-col gap-[60px] md:gap-[80px]">
     <div
       class="flex flex-col md:items-end justify-between container gap-6 md:flex-row items-center mt-[70px] md:mt-[120px]"
     >
       <section-title text="Our " textColorful="Products">
-        Discover a range of comprehensive and customizable banking products at YourBank, designed to suit your
+        Discover a range of comprehensive and customizable banking products at
+        YourBank, designed to suit your
         <br />
         unique financial needs and aspirations
       </section-title>
@@ -45,16 +50,20 @@ const benefits = [
         }"
       >
         <gradient-icon>
-          <component :is="item.icon" class="w-[28px] h-auto fill-green-shades-60" />
+          <component
+            :is="item.icon"
+            class="w-[28px] h-auto fill-green-shades-60"
+          />
         </gradient-icon>
 
         <div class="flex flex-col gap-4 items-center text-center">
           <p class="text-white text-xl">{{ item.title }}</p>
+
           <p class="text-grey-shades-70 text-sm md:text-base font-light">
             {{ item.content }}
           </p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

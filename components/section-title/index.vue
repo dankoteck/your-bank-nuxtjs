@@ -16,7 +16,9 @@ withDefaults(
 </script>
 
 <template>
-  <div class="flex flex-col gap-2.5 text-center md:text-left">
+  <div
+    class="flex flex-col gap-2.5 items-center md:items-start text-center md:text-left"
+  >
     <p class="text-[28px] md:text-[38px] leading-[1.5] text-white w-fit">
       <span :class="{ 'float-right': wordReversed }">{{ text }}</span>
 
@@ -25,7 +27,9 @@ withDefaults(
       </span>
     </p>
 
-    <p class="text-grey-shades-70 text-sm md:text-base font-light leading-[1.5]">
+    <p
+      class="text-grey-shades-70 text-sm md:text-base font-light leading-[1.5]"
+    >
       <slot></slot>
     </p>
   </div>
@@ -40,7 +44,9 @@ withDefaults(
       For Individuals
     </button>
 
-    <button class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center text-white">
+    <button
+      class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center text-white"
+    >
       For Businesses
     </button>
   </div>

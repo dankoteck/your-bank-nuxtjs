@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const currencies = [
   { alt: "Dollar Currency Icon", src: "/icons/dollar-currency.svg" },
   { alt: "Euro Currency Icon", src: "/icons/euro-currency.svg" },
@@ -9,33 +9,33 @@ const currencies = [
 
 <template>
   <section
-    class="flex flex-col md:flex-row items-center md:items-start md:justify-between mt-[50px] md:mt-[80px] gap-2 lg:gap-10 container"
+    class="container mt-[50px] flex flex-col items-center gap-2 md:mt-[80px] md:flex-row md:items-start md:justify-between lg:gap-10"
   >
-    <div class="flex-1 flex flex-col items-center md:items-start gap-2">
+    <div class="flex flex-1 flex-col items-center gap-2 md:items-start">
       <div
-        class="p-2 pr-4 flex items-center gap-1 rounded-[61px] bg-grey-shades-15 w-fit"
+        class="flex w-fit items-center gap-1 rounded-[61px] bg-grey-shades-15 p-2 pr-4"
       >
         <nuxt-img
           alt="Verification Icon"
+          class="h-5 w-5"
           src="/icons/verification.svg"
-          class="w-5 h-5"
         />
-        <p class="text-white font-light text-xs leading-6">
+        <p class="text-xs font-light leading-6 text-white">
           No LLC Required, No Credit Check.
         </p>
       </div>
 
       <div
-        class="text-[28px] md:text-[38px] text-center md:text-left leading-[150%] mt-1 w-full"
+        class="mt-1 w-full text-center text-[28px] leading-[150%] md:text-left md:text-[38px]"
       >
         <p class="text-white">
           Welcome to YourBank
           <br />
           Empowering Your
-          <span class="text-green-shades-60 hidden md:inline-block">
+          <span class="hidden text-green-shades-60 md:inline-block">
             Financial
           </span>
-          <span class="text-green-shades-60 hidden md:inline-block xl:block">
+          <span class="hidden text-green-shades-60 md:inline-block xl:block">
             <span class="inline-block xl:hidden">&nbsp;</span>
             Journey
           </span>
@@ -44,7 +44,7 @@ const currencies = [
       </div>
 
       <p
-        class="text-sm md:text-base text-center md:text-left -tracking-[0.2px] text-white-shades-90 leading-[150%] font-light"
+        class="text-center text-sm font-light leading-[150%] -tracking-[0.2px] text-white-shades-90 md:text-left md:text-base"
       >
         At YourBank, our mission is to provide comprehensive banking solutions
         that empower individuals and businesses to achieve their financial
@@ -57,23 +57,23 @@ const currencies = [
       </div>
     </div>
 
-    <div class="flex-1 flex flex-col items-center md:items-end gap-2 w-full">
+    <div class="flex w-full flex-1 flex-col items-center gap-2 md:items-end">
       <mockup-transactions-table />
 
       <div
-        class="flex items-center justify-between self-end gap-1 rounded-[42px] mt-1 lg:mr-4 xl:mr-24 px-2 py-1.5 pl-4 bg-[#22251B]"
+        class="mt-1 flex items-center justify-between gap-1 self-end rounded-[42px] bg-[#22251B] px-2 py-1.5 pl-4 lg:mr-4 xl:mr-24"
       >
-        <p class="text-[10px] md:text-xs leading-[150%] text-white">
+        <p class="text-[10px] leading-[150%] text-white md:text-xs">
           Supported Currency
         </p>
         <div
-          class="rounded-[28px] bg-grey-shades-10 flex items-center gap-1 justify-center p-1.5"
+          class="flex items-center justify-center gap-1 rounded-[28px] bg-grey-shades-10 p-1.5"
         >
           <nuxt-img
             v-for="currency in currencies"
-            :src="currency.src"
             :alt="currency.alt"
-            class="w-5 h-5 md:w-8 md:h-8"
+            :src="currency.src"
+            class="h-5 w-5 md:h-8 md:w-8"
           />
         </div>
       </div>

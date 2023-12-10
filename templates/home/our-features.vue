@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const navItems = [
   {
     id: "online-banking",
     label: "Online Banking",
-    childrens: [
+    children: [
       {
         title: "24/7 Account Access",
         content:
@@ -29,7 +29,7 @@ const navItems = [
   {
     id: "financial-tools",
     label: "Financial Tools",
-    childrens: [
+    children: [
       {
         title: "Budget Planner",
         content:
@@ -55,7 +55,7 @@ const navItems = [
   {
     id: "customer-support",
     label: "Customer Support",
-    childrens: [
+    children: [
       {
         title: "24/7 Helpdesk",
         content:
@@ -82,70 +82,67 @@ const navItems = [
 
 const activeItemIndex = ref("online-banking");
 
-const activeItemChildrens = computed(() => {
+const activeItemChildren = computed(() => {
   const currentItem = navItems.find(
-    (item) => item.id === activeItemIndex.value
+    (item) => item.id === activeItemIndex.value,
   );
 
-  if (currentItem) {
-    return currentItem.childrens;
-  }
-
-  return [];
+  return currentItem ? currentItem.children : [];
 });
 </script>
 
 <template>
-  <div class="container mt-[80px] md:mt-[120px] flex flex-col gap-[60px]">
+  <div class="container mt-[80px] flex flex-col gap-[60px] md:mt-[120px]">
     <div class="max-w-[1030px]">
       <section-title
-        text="Our Features"
         :highlighted="['Features']"
         :plan-subscription="false"
+        text="Our Features"
       >
         Experience a host of powerful features at YourBank, including seamless
-        online banking, secure transactions, and personalized financial insights, all designed to enhance your banking experience
+        online banking, secure transactions, and personalized financial
+        insights, all designed to enhance your banking experience
       </section-title>
     </div>
 
-    <div class="flex gap-5 flex-col xl:flex-row">
+    <div class="flex flex-col gap-5 xl:flex-row">
       <nav
-        class="overflow-y-auto p-5 xl:p-10 w-full xl:w-auto rounded-[10px] bg-grey-shades-11 self-start"
+        class="w-full self-start overflow-y-auto rounded-[10px] bg-grey-shades-11 p-5 xl:w-auto xl:p-10"
       >
         <ul
-          class="flex flex-nowrap flex-row xl:flex-col gap-5 justify-start md:justify-center text-white text-sm"
+          class="flex flex-row flex-nowrap justify-start gap-5 text-sm text-white md:justify-center xl:flex-col"
         >
           <li v-for="item in navItems" class="min-w-fit">
-            <button
+            <button-basic
+              :active="item.id === activeItemIndex"
+              size="xs"
               @click="activeItemIndex = item.id"
-              class="px-5 py-3.5 rounded-[100px] border border-grey-shades-15"
-              :class="{ 'text-green-shades-60': item.id === activeItemIndex }"
             >
               {{ item.label }}
-            </button>
+            </button-basic>
           </li>
         </ul>
       </nav>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
         <div
-          class="p-[30px] lg:p-10 flex flex-col gap-5 lg:gap-6 rounded-[10px] border-grey-shades-15 bg-grey-shades-11 xl:max-w-[497px] 2xl:max-w-[614px]"
-          v-for="item in activeItemChildrens"
+          v-for="item in activeItemChildren"
+          class="flex flex-col gap-5 rounded-[10px] border-grey-shades-15 bg-grey-shades-11 p-[30px] lg:gap-6 lg:p-10 xl:max-w-[497px] 2xl:max-w-[614px]"
         >
           <div class="flex items-center justify-between">
-            <span class="text-white text-lg">
+            <span class="text-lg text-white">
               {{ item.title }}
             </span>
 
             <nuxt-img
-              src="/icons/external-anchor.svg"
               alt="External Anchor Icon"
-              class="w-6 h-6"
+              class="h-6 w-6"
+              src="/icons/external-anchor.svg"
             />
           </div>
 
           <p
-            class="text-grey-shades-70 font-light text-sm lg:text-base -tracking-[0.084px] lg:-tracking-[0.096px]"
+            class="text-sm font-light -tracking-[0.084px] text-grey-shades-70 lg:text-base lg:-tracking-[0.096px]"
           >
             {{ item.content }}
           </p>

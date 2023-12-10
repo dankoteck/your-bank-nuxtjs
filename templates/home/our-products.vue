@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {
   ArchiveBoxArrowDownIcon,
   BanknotesIcon,
@@ -28,38 +28,35 @@ const benefits = [
 </script>
 
 <template>
-  <section class="flex flex-col gap-[60px] md:gap-[80px]">
-    <div
-      class="flex flex-col md:items-end justify-between container gap-6 md:flex-row items-center mt-[70px] md:mt-[120px]"
-    >
-      <section-title text="Our Products" :highlighted="['Products']">
-        Discover a range of comprehensive and customizable banking products at
-        YourBank, designed to suit your
-        <br />
-        unique financial needs and aspirations
-      </section-title>
-    </div>
+  <section
+    class="mt-[70px] flex flex-col gap-[60px] md:mt-[120px] md:gap-[80px]"
+  >
+    <section-title :highlighted="['Products']" text="Our Products">
+      Discover a range of comprehensive and customizable banking products at
+      YourBank, designed to suit your
+      <br />
+      unique financial needs and aspirations
+    </section-title>
 
-    <div class="flex flex-col lg:flex-row items-center container">
+    <div class="container flex flex-col items-center lg:flex-row">
       <div
         v-for="(item, index) in benefits"
-        class="flex-1 px-2.5 lg:px-10 py-[30px] lg:py-6 border-b lg:border-b-0 lg:border-r border-grey-shades-15 flex flex-col gap-6 justify-center items-center"
         :class="{
-          'pt-0 lg:pt-6 lg:pl-0': index === 0,
-          '!pr-0 border-b-0 !border-r-0': index === benefits.length - 1,
+          'pt-0 lg:pl-0 lg:pt-6': index === 0,
+          '!border-r-0 border-b-0 !pr-0': index === benefits.length - 1,
         }"
+        class="flex flex-1 flex-col items-center justify-center gap-6 border-b border-grey-shades-15 px-2.5 py-[30px] lg:border-b-0 lg:border-r lg:px-10 lg:py-6"
       >
         <gradient-icon>
           <component
             :is="item.icon"
-            class="w-[28px] h-auto fill-green-shades-60"
+            class="h-auto w-[28px] fill-green-shades-60"
           />
         </gradient-icon>
 
-        <div class="flex flex-col gap-4 items-center text-center">
-          <p class="text-white text-xl">{{ item.title }}</p>
-
-          <p class="text-grey-shades-70 text-sm md:text-base font-light">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <p class="text-xl text-white">{{ item.title }}</p>
+          <p class="text-sm font-light text-grey-shades-70 md:text-base">
             {{ item.content }}
           </p>
         </div>

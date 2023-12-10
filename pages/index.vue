@@ -1,9 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import HomeHeroSection from "~/templates/home/hero.vue";
 import OurProductsSection from "~/templates/home/our-products.vue";
 import UseCasesSection from "~/templates/home/use-cases.vue";
 import OurFeaturesSection from "~/templates/home/our-features.vue";
-import FaqsSection from '~/templates/home/faqs-section.vue'
+import FaqsSection from "~/templates/home/faqs-section.vue";
+import OurTestimonialsSection from "~/templates/home/our-testimonials.vue";
 
 useHead({
   title: "YourBank | Home",
@@ -23,4 +24,5 @@ useHead({
   <use-cases-section />
   <our-features-section />
   <faqs-section />
+  <our-testimonials-section />
 </template>

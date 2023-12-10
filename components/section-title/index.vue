@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const props = withDefaults(
   defineProps<{
     text: string;
@@ -18,38 +18,44 @@ const textToRender = computed(() => text.value.split(" "));
 
 <template>
   <div
-    class="flex flex-col gap-2.5 items-center md:items-start text-center md:text-left"
+    class="container flex flex-col items-center justify-between gap-6 md:flex-row md:items-end"
   >
-    <p class="text-[28px] md:text-[38px] leading-[1.5] text-white w-fit">
-      <span
-        v-for="word in textToRender"
-        :class="{ 'text-green-shades-60': highlighted?.includes(word) }"
+    <div
+      class="flex flex-col items-center gap-2.5 text-center md:items-start md:text-left"
+    >
+      <div
+        class="w-fit text-center text-[28px] leading-[1.5] text-white md:text-left md:text-[38px]"
       >
-        {{ word + " " }}
-      </span>
-    </p>
+        <span
+          v-for="word in textToRender"
+          :class="{ 'text-green-shades-60': highlighted?.includes(word) }"
+        >
+          {{ word + " " }}
+        </span>
+      </div>
 
-    <p
-      class="text-grey-shades-70 text-sm md:text-base font-light leading-[1.5]"
-    >
-      <slot></slot>
-    </p>
-  </div>
+      <p
+        class="text-sm font-light leading-[1.5] text-grey-shades-70 md:text-base"
+      >
+        <slot></slot>
+      </p>
+    </div>
 
-  <div
-    v-if="planSubscription"
-    class="p-3 flex items-center rounded-[82px] border border-grey-shades-15 bg-grey-shades-11"
-  >
-    <button
-      class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center bg-green-shades-60 text-grey-shades-11"
+    <div
+      v-if="planSubscription"
+      class="flex items-center rounded-[82px] border border-grey-shades-15 bg-grey-shades-11 p-3"
     >
-      For Individuals
-    </button>
+      <button
+        class="items-center justify-center rounded-[140px] bg-green-shades-60 px-[18px] py-2.5 text-sm text-grey-shades-11 md:text-base"
+      >
+        For Individuals
+      </button>
 
-    <button
-      class="text-sm md:text-base rounded-[140px] py-2.5 px-[18px] items-center justify-center text-white"
-    >
-      For Businesses
-    </button>
+      <button
+        class="items-center justify-center rounded-[140px] px-[18px] py-2.5 text-sm text-white md:text-base"
+      >
+        For Businesses
+      </button>
+    </div>
   </div>
 </template>

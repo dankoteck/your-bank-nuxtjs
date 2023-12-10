@@ -32,22 +32,24 @@ const testimonials = [
     <section-title :highlighted="['Testimonials']" text="Our Testimonials">
       Discover how YourBank has transformed lives with innovative digital
       solutions and personalized customer service. See why
-      <br class="hidden md:block" />
+      <br class="hidden xl:block" />
       our clients trust us for a secure and prosperous financial journey
     </section-title>
 
     <div class="relative flex flex-col gap-[30px] lg:flex-row lg:gap-10">
-      <button-basic
-        v-if="isLargeScreen"
-        id="swiper-navigation-prevEl"
-        active
-        aria-label="Swiper Navigation Prev Button"
-        class="self-center !p-3"
-      >
-        <template #icon>
-          <arrow-left-icon class="h-7 w-7" />
-        </template>
-      </button-basic>
+      <client-only>
+        <button-basic
+          v-if="isLargeScreen"
+          id="swiper-navigation-prevEl"
+          active
+          aria-label="Swiper Navigation Prev Button"
+          class="self-center !p-3"
+        >
+          <template #icon>
+            <arrow-left-icon class="h-7 w-7" />
+          </template>
+        </button-basic>
+      </client-only>
 
       <Swiper
         :breakpoints="{
@@ -98,30 +100,32 @@ const testimonials = [
         <div class="bg-testimonials-overlay right-0 rotate-180"></div>
       </Swiper>
 
-      <div class="flex items-center justify-center gap-5">
-        <button-basic
-          v-if="!isLargeScreen"
-          id="swiper-navigation-prevEl"
-          active
-          aria-label="Swiper Navigation Prev Button"
-          class="self-center !p-3"
-        >
-          <template #icon>
-            <arrow-left-icon class="h-7 w-7" />
-          </template>
-        </button-basic>
+      <client-only>
+        <div class="flex items-center justify-center gap-5">
+          <button-basic
+            v-if="!isLargeScreen"
+            id="swiper-navigation-prevEl"
+            active
+            aria-label="Swiper Navigation Prev Button"
+            class="self-center !p-3"
+          >
+            <template #icon>
+              <arrow-left-icon class="h-7 w-7" />
+            </template>
+          </button-basic>
 
-        <button-basic
-          id="swiper-navigation-nextEl"
-          active
-          aria-label="Swiper Navigation Next Button"
-          class="self-center !p-3"
-        >
-          <template #icon>
-            <arrow-right-icon class="h-7 w-7" />
-          </template>
-        </button-basic>
-      </div>
+          <button-basic
+            id="swiper-navigation-nextEl"
+            active
+            aria-label="Swiper Navigation Next Button"
+            class="self-center !p-3"
+          >
+            <template #icon>
+              <arrow-right-icon class="h-7 w-7" />
+            </template>
+          </button-basic>
+        </div>
+      </client-only>
     </div>
   </div>
 </template>

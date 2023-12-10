@@ -2,12 +2,14 @@
 const props = withDefaults(
   defineProps<{
     text: string;
+    textSize?: "sm" | "md";
     highlighted?: string[];
     planSubscription?: boolean;
   }>(),
   {
     highlighted: undefined,
     planSubscription: true,
+    textSize: "md",
   },
 );
 
@@ -24,7 +26,11 @@ const textToRender = computed(() => text.value.split(" "));
       class="flex flex-col items-center gap-2.5 text-center md:items-start md:text-left"
     >
       <div
-        class="w-fit text-center text-[28px] leading-[1.5] text-white md:text-left md:text-[38px]"
+        :class="{
+          'text-[28px] md:text-[38px]': textSize === 'md',
+          'text-2xl md:text-[30px]': textSize === 'sm',
+        }"
+        class="w-fit text-center leading-[1.5] text-white md:text-left"
       >
         <span
           v-for="word in textToRender"

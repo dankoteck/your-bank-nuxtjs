@@ -5,6 +5,7 @@ import UseCasesSection from "~/templates/home/use-cases.vue";
 import OurFeaturesSection from "~/templates/home/our-features.vue";
 import FaqsSection from "~/templates/home/faqs-section.vue";
 import OurTestimonialsSection from "~/templates/home/our-testimonials.vue";
+import CtaSection from '~/templates/home/cta-section.vue'
 
 useHead({
   title: "YourBank | Home",
@@ -25,4 +26,5 @@ useHead({
   <our-features-section />
   <faqs-section />
   <our-testimonials-section />
+  <cta-section />
 </template>

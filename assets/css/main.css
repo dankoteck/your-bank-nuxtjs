@@ -22,8 +22,7 @@ body {
 
 @layer components {
   .bg-mockup-transactions-table {
-    background: #1a1a1a linear-gradient(215deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 39.72%) url("/images/asfalt-light.webp");
-    background-size: 37px;
+    background: linear-gradient(215deg, rgba(26, 26, 26, 0.00) 0%, #1A1A1A 39.72%), url("/images/asfalt-light.webp") repeat 50px 50px;
     background-blend-mode: normal, screen, normal;
   }
   
@@ -66,5 +65,14 @@ body {
     inset: 0;
     background-image: url("/images/abstract-design-03.svg");
     background-repeat: no-repeat;
+  }
+  
+  .cta-section {
+    @apply relative max-w-screen-xl rounded-[20px] border border-grey-shades-15 container mt-[80px] md:mt-[120px] flex items-center justify-between p-[30px] lg:p-[60px] flex-col md:flex-row gap-6 md:gap-0;
+    background: linear-gradient(267deg, #1C1C1CFF 40%, rgba(28, 28, 28, 0.6) 100%), url("/images/asfalt-light.webp") 62px 62px repeat;
+  }
+  
+  .cta-section::before {
+    @apply absolute content-[""] left-0 top-0 w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-[url("/images/abstract-design-03.svg")];
   }
 }

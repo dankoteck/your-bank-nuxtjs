@@ -99,8 +99,8 @@ const activeItemChildrens = computed(() => {
   <div class="container mt-[80px] md:mt-[120px] flex flex-col gap-[60px]">
     <div class="max-w-[1030px]">
       <section-title
-        text="Our "
-        textColorful="Features"
+        text="Our Features"
+        :highlighted="['Features']"
         :plan-subscription="false"
       >
         Experience a host of powerful features at YourBank, including seamless

@@ -80,7 +80,7 @@ const cases02 = [
 <template>
   <div class="container mt-[80px] md:mt-[120px] flex flex-col gap-10">
     <div class="text-center md:text-left">
-      <section-title :plan-subscription="false" text-colorful="Use Cases">
+      <section-title :plan-subscription="false" text="Use Cases" :highlighted="['Use', 'Cases']">
         At YourBank, we cater to the diverse needs of individuals and businesses alike, offering a wide range of
         financial solutions
       </section-title>

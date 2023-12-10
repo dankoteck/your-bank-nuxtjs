@@ -9,13 +9,11 @@ body {
 
 @layer components {
   .bg-mockup-transactions-table {
-    background: linear-gradient(215deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 39.72%),
-      url("/images/asfalt-light.webp");
+    background: #1a1a1a linear-gradient(215deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 39.72%) url("/images/asfalt-light.webp");
     background-size: 37px;
-    background-color: #1a1a1a;
     background-blend-mode: normal, screen, normal;
   }
-
+  
   .bg-gradient-icon-container {
     background-image: linear-gradient(
       180deg,
@@ -23,7 +21,11 @@ body {
       rgba(202, 255, 51, 0) 100%
     );
   }
-
+  
+  .bg-section-overlay {
+    background: linear-gradient(180deg, rgba(25, 25, 25, 0.00) 0%, #191919 100%);
+  }
+  
   .bg-gradient-icon {
     background-image: linear-gradient(
       180deg,
@@ -31,15 +33,15 @@ body {
       rgba(202, 255, 51, 0) 85.46%
     );
   }
-
+  
   .bg-use-cases {
     position: relative;
   }
-
+  
   .bg-use-cases * {
     z-index: 1;
   }
-
+  
   .bg-use-cases::before {
     content: "";
     position: absolute;

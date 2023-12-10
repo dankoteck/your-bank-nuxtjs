@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
-  BriefcaseIcon,
   ArchiveBoxArrowDownIcon,
   BanknotesIcon,
+  BriefcaseIcon,
 } from "@heroicons/vue/24/solid";
 
 const benefits = [
@@ -32,7 +32,7 @@ const benefits = [
     <div
       class="flex flex-col md:items-end justify-between container gap-6 md:flex-row items-center mt-[70px] md:mt-[120px]"
     >
-      <section-title text="Our " textColorful="Products">
+      <section-title text="Our Products" :highlighted="['Products']">
         Discover a range of comprehensive and customizable banking products at
         YourBank, designed to suit your
         <br />

@@ -1,18 +1,19 @@
 <script setup lang="ts">
-withDefaults(
+const props = withDefaults(
   defineProps<{
-    text?: string;
-    textColorful?: string;
+    text: string;
+    highlighted?: string[];
     planSubscription?: boolean;
-    wordReversed?: boolean;
   }>(),
   {
-    text: "",
-    textColorful: "",
+    highlighted: undefined,
     planSubscription: true,
-    wordReversed: false,
-  }
+  },
 );
+
+const { text } = toRefs(props);
+
+const textToRender = computed(() => text.value.split(" "));
 </script>
 
 <template>
@@ -20,10 +21,11 @@ withDefaults(
     class="flex flex-col gap-2.5 items-center md:items-start text-center md:text-left"
   >
     <p class="text-[28px] md:text-[38px] leading-[1.5] text-white w-fit">
-      <span :class="{ 'float-right': wordReversed }">{{ text }}</span>
-
-      <span class="text-green-shades-60">
-        {{ textColorful }}
+      <span
+        v-for="word in textToRender"
+        :class="{ 'text-green-shades-60': highlighted?.includes(word) }"
+      >
+        {{ word + " " }}
       </span>
     </p>
 

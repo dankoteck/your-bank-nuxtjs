@@ -1,12 +1,13 @@
 <template>
   <main
-    class="px-4 py-10 overflow-hidden"
     :class="{
-      'bg-[-20px_-20px] bg-[url(/images/abstract-design-02.svg)] bg-no-repeat':
+      'bg-[url(/images/abstract-design-02.svg)] bg-[-20px_-20px] bg-no-repeat':
         $route.path === '/',
     }"
+    class="overflow-hidden px-4 py-10"
   >
-    <header-navigation />
+    <app-header />
     <slot></slot>
   </main>
+  <app-footer />
 </template>

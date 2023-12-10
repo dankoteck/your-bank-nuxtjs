@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const route = useRoute();
 
 const navList = [
@@ -9,29 +9,40 @@ const navList = [
 ];
 
 const activeItem = (pathname: string) => route.path === pathname;
+
+withDefaults(
+  defineProps<{
+    register?: boolean;
+    noStyles?: boolean;
+  }>(),
+  {
+    register: true,
+    noStyles: false,
+  },
+);
 </script>
 
 <template>
-  <ul class="hidden md:flex items-center">
+  <ul class="hidden items-center md:flex">
     <li
-      class="text-white text-sm leading-[150%] px-5 py-2.5 rounded-full"
-      :class="{ 'bg-grey-shades-15': activeItem(item.path) }"
       v-for="item in navList"
+      :class="{ 'bg-grey-shades-15': !noStyles && activeItem(item.path) }"
+      class="rounded-full px-5 py-2.5 text-sm leading-[150%] text-white"
     >
       <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
     </li>
   </ul>
 
-  <ul class="hidden md:flex items-center">
+  <ul v-if="register" class="hidden items-center md:flex">
     <li
-      class="text-white text-sm leading-[150%] px-4 py-2 rounded-full"
       :class="{ 'bg-grey-shades-15': activeItem('/sign-up') }"
+      class="rounded-full px-4 py-2 text-sm leading-[150%] text-white"
     >
       <nuxt-link to="/">Sign Up</nuxt-link>
     </li>
     <li
-      class="text-white text-sm leading-[150%] rounded-full"
       :class="{ 'bg-grey-shades-15': activeItem('/login') }"
+      class="rounded-full text-sm leading-[150%] text-white"
     >
       <button-filled>Login</button-filled>
     </li>

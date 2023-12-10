@@ -1,17 +1,17 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import NavigationList from "./navigation-list.vue";
 </script>
 
 <template>
   <header
-    class="container p-3.5 pl-6 md:pl-6 rounded-[100px] flex items-center justify-between outline outline-grey-shades-15 bg-grey-shades-11"
+    class="container flex items-center justify-between rounded-[100px] bg-grey-shades-11 p-3.5 pl-6 outline outline-grey-shades-15 md:pl-6"
   >
     <nuxt-img
-      width="120"
-      height="40"
-      v-bind="$attrs"
       alt="Logo"
+      height="40"
       src="/icons/logo-desktop.svg"
+      v-bind="$attrs"
+      width="120"
     />
 
     <nav class="md:hidden">

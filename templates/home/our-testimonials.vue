@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { Navigation } from "swiper/modules";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/vue/24/solid";
+import { useMediaQuery } from "@vueuse/core";
+
+const isLargeScreen = useMediaQuery("(min-width: 1024px)");
 
 const testimonials = [
   {
@@ -35,9 +38,11 @@ const testimonials = [
 
     <div class="relative flex flex-col gap-[30px] lg:flex-row lg:gap-10">
       <button-basic
+        v-if="isLargeScreen"
         id="swiper-navigation-prevEl"
         active
-        class="hidden self-center !p-3 lg:block"
+        aria-label="Swiper Navigation Prev Button"
+        class="self-center !p-3"
       >
         <template #icon>
           <arrow-left-icon class="h-7 w-7" />
@@ -67,7 +72,7 @@ const testimonials = [
 
         <SwiperSlide v-for="item in testimonials">
           <div
-            class="flex flex-col gap-[30px] rounded-xl border border-grey-shades-15 p-5 text-center lg:gap-10 md:border-0 lg:px-[30px] lg:py-0"
+            class="flex flex-col gap-[30px] rounded-xl border border-grey-shades-15 p-5 text-center md:border-0 lg:gap-10 lg:px-[30px] lg:py-0"
           >
             <div class="flex items-center gap-4">
               <hr
@@ -95,9 +100,11 @@ const testimonials = [
 
       <div class="flex items-center justify-center gap-5">
         <button-basic
+          v-if="!isLargeScreen"
           id="swiper-navigation-prevEl"
           active
-          class="block self-center !p-3 lg:!hidden"
+          aria-label="Swiper Navigation Prev Button"
+          class="self-center !p-3"
         >
           <template #icon>
             <arrow-left-icon class="h-7 w-7" />
@@ -107,6 +114,7 @@ const testimonials = [
         <button-basic
           id="swiper-navigation-nextEl"
           active
+          aria-label="Swiper Navigation Next Button"
           class="self-center !p-3"
         >
           <template #icon>

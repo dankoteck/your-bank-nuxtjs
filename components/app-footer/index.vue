@@ -6,7 +6,7 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/vue/24/solid";
 
 <template>
   <div
-    class="flex w-full flex-col items-center gap-10 bg-grey-shades-11 px-4 pb-[30px] pt-[50px] lg:px-20 lg:pt-[60px]"
+    class="flex w-full flex-col items-center gap-[30px] bg-grey-shades-11 px-4 pb-[30px] pt-[50px] md:gap-10 lg:px-20 lg:pt-[60px]"
   >
     <nuxt-img
       alt="Logo"
@@ -15,7 +15,12 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/vue/24/solid";
       width="130"
     />
 
-    <navigation-list :no-styles="true" :register="false" />
+    <navigation-list
+      :dense="true"
+      :no-active="true"
+      :register="false"
+      :show-on-sp="true"
+    />
 
     <hr
       class="block h-[1px] w-full border-0 border-b border-b-grey-shades-15"
@@ -45,7 +50,7 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/vue/24/solid";
     />
 
     <div
-      class="flex w-full flex-col items-center justify-between gap-5 rounded-xl border border-grey-shades-15 bg-grey-shades-10 p-3 pb-[30px] pr-6 lg:flex-row lg:gap-0 lg:rounded-[100px] lg:pb-3"
+      class="mt-5 flex w-full flex-col items-center justify-between gap-5 rounded-xl border border-grey-shades-15 bg-grey-shades-10 p-3 pb-[30px] pr-6 lg:flex-row lg:gap-0 lg:rounded-[100px] lg:pb-3"
     >
       <div class="-mt-8 flex items-center gap-2 lg:mt-0">
         <div

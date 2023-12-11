@@ -13,21 +13,35 @@ const activeItem = (pathname: string) => route.path === pathname;
 withDefaults(
   defineProps<{
     register?: boolean;
-    noStyles?: boolean;
+    noActive?: boolean;
+    dense?: boolean;
+    showOnSp?: boolean;
   }>(),
   {
     register: true,
-    noStyles: false,
+    noActive: false,
+    dense: false,
+    showOnSp: false,
   },
 );
 </script>
 
 <template>
-  <ul class="hidden items-center md:flex">
+  <ul
+    :class="{
+      hidden: !showOnSp,
+      flex: showOnSp,
+    }"
+    class="items-center md:flex"
+  >
     <li
       v-for="item in navList"
-      :class="{ 'bg-grey-shades-15': !noStyles && activeItem(item.path) }"
-      class="rounded-full px-5 py-2.5 text-sm leading-[150%] text-white"
+      :class="{
+        'bg-grey-shades-15': !noActive && activeItem(item.path),
+        'px-[7px] md:px-[13px]': dense,
+        'px-5': !dense,
+      }"
+      class="rounded-full py-2.5 text-sm leading-[150%] text-white"
     >
       <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
     </li>

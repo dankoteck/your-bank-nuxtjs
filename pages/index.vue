@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import HomeHeroSection from "~/templates/home/hero.vue";
+import HeroSection from "~/templates/home/hero.vue";
 import OurProductsSection from "~/templates/home/our-products.vue";
 import UseCasesSection from "~/templates/home/use-cases.vue";
 import OurFeaturesSection from "~/templates/home/our-features.vue";
 import FaqsSection from "~/templates/home/faqs-section.vue";
 import OurTestimonialsSection from "~/templates/home/our-testimonials.vue";
-import CtaSection from '~/templates/home/cta-section.vue'
+import CtaSection from "~/templates/home/cta-section.vue";
 
 useHead({
   title: "YourBank | Home",
@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <template>
-  <home-hero-section />
+  <hero-section />
   <our-products-section />
   <use-cases-section />
   <our-features-section />

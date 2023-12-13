@@ -1,0 +1,38 @@
+{
+  "description": "At YourBank, our mission is to provide comprehensive banking solutions\nthat empower individuals and businesses to achieve their financial\ngoals. We are committed to delivering personalized and innovative\nservices that prioritize our customers&apos; needs.",
+  "supportedCurrency": [
+    "dollar",
+    "euro",
+    "bitcoin",
+    "ethereum"
+  ],
+  "exampleTransactions": [
+    {
+      "name": "Joel Kenley",
+      "price": "-$68.00"
+    },
+    {
+      "name": "Mark Smith",
+      "price": "-$48.00"
+    },
+    {
+      "name": "Lenen Roy",
+      "price": "-$28.00"
+    }
+  ],
+  "exampleMonthlyIncome": "+ $5000,00",
+  "currentExchangeRate": [
+    {
+      "name": "INR",
+      "currency": "Indian Rupees",
+      "flag": "indian",
+      "value": 50000
+    },
+    {
+      "name": "USD",
+      "currency": "United States Dollar",
+      "flag": "american",
+      "value": 12.00
+    }
+  ]
+}

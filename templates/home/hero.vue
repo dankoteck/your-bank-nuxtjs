@@ -1,10 +1,17 @@
 <script lang="ts" setup>
-const currencies = [
-  { alt: "Dollar Currency Icon", src: "/icons/dollar-currency.svg" },
-  { alt: "Euro Currency Icon", src: "/icons/euro-currency.svg" },
-  { alt: "Bitcoin Currency Icon", src: "/icons/bitcoin-currency.svg" },
-  { alt: "Ethereum Currency Icon", src: "/icons/ethereum-currency.svg" },
-];
+import type { HomeContentData } from "~/types";
+
+const { data } = await useAsyncData("home-content", () =>
+  queryContent<HomeContentData>("/home")
+    .only([
+      "description",
+      "supportedCurrency",
+      "currentExchangeRate",
+      "exampleTransactions",
+      "exampleMonthlyIncome",
+    ])
+    .findOne(),
+);
 </script>
 
 <template>
@@ -36,7 +43,7 @@ const currencies = [
             Financial
           </span>
           <span class="hidden text-green-shades-60 md:inline-block xl:block">
-            <span class="inline-block xl:hidden">&nbsp;</span>
+            <span class="inline-block xl:hidden"> </span>
             Journey
           </span>
         </p>
@@ -46,10 +53,7 @@ const currencies = [
       <p
         class="text-center text-sm font-light leading-[150%] -tracking-[0.2px] text-white-shades-90 md:text-left md:text-base"
       >
-        At YourBank, our mission is to provide comprehensive banking solutions
-        that empower individuals and businesses to achieve their financial
-        goals. We are committed to delivering personalized and innovative
-        services that prioritize our customers&apos; needs.
+        {{ data?.description }}
       </p>
 
       <div class="mt-[22px]">
@@ -58,7 +62,7 @@ const currencies = [
     </div>
 
     <div class="flex w-full flex-1 flex-col items-center gap-2 md:items-end">
-      <mockup-transactions-table />
+      <mockup-transactions-table :data="data" />
 
       <div
         class="mt-1 flex items-center justify-between gap-1 self-end rounded-[42px] bg-[#22251B] px-2 py-1.5 pl-4 lg:mr-4 xl:mr-24"
@@ -70,9 +74,9 @@ const currencies = [
           class="flex items-center justify-center gap-1 rounded-[28px] bg-grey-shades-10 p-1.5"
         >
           <nuxt-img
-            v-for="currency in currencies"
-            :alt="currency.alt"
-            :src="currency.src"
+            v-for="currency in data?.supportedCurrency"
+            :alt="`${currency} currency icon`"
+            :src="`/icons/${currency}-currency.svg`"
             class="h-5 w-5 md:h-8 md:w-8"
           />
         </div>
